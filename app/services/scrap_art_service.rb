@@ -17,11 +17,10 @@ class ScrapArtService
       artist_date = block.search(".title").text.split("-").last
       artist = artist_date.split("(").first
       date = artist_date.split("(").last
-      ap artist
-      description =
-      image =
-      exposition =
-      Artwork.create(title: title, description: description, image: image, exposition: exposition)
+      description = block.search(".description").text
+      image = block.search("img").attr("data-src")
+      exposition = block.search(".exposition").text
+      Artwork.create!(title: title, artist: artist, date: date, description: description, image: image, exposition: exposition)
     end
 
     return nil
