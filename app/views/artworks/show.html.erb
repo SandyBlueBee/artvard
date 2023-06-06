@@ -1,0 +1,11 @@
+<h1><%= @artwork.title %></h1>
+
+<div>
+  <%= image_tag image_url(@artwork.image)  %>
+
+  <div>
+  <h2><%= @artwork.artist %></h2>
+  <p><%= @artwork.description %></p>
+  </div>
+</div>
+ <p>Réalisée en <%= @artwork.date %></p>

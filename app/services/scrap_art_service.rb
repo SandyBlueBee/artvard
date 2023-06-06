@@ -19,6 +19,7 @@ class ScrapArtService
       date = artist_date.split("(").last
       description = block.search(".description").text
       image = block.search("img").attr("data-src")
+      image = URI(image).path.split('/').last
       exposition = block.search(".exposition").text
       Artwork.create!(title: title, artist: artist, date: date, description: description, image: image, exposition: exposition)
     end
