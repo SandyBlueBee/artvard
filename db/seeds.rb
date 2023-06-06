@@ -7,7 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-User.destroy.all
+User.destroy_all
 
 User.create!(username: "toto", email: "toto@test.com", password: "password")
 
+puts "je fais le service"
+ScrapArtService.new.call
+puts "j'ai fini le service ( #{Artwork.count} peintures créées )"
