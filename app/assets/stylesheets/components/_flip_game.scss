@@ -1,0 +1,20 @@
+.flip-card-grid {
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  grid-auto-rows: 20vh;
+  gap: 10px;
+}
+
+.flip-card-grid .card {
+ border: 1px solid black;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: all 0.3s;
+  &.upsidedown{
+    background-color: black;
+  }
+  &.remove {
+    opacity: 0;
+  }
+}
