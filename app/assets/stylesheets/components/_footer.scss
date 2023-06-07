@@ -1,0 +1,17 @@
+footer {
+  height: 60px;
+  background-color: #1F1F33;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+}
+
+footer p, footer h3 {
+  color: #3E3E65;
+  line-height: 20px;
+}
