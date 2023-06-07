@@ -1,1 +1,26 @@
-
+<div class="banner">
+  <div>
+    <h1>Bienvenue à <strong>ARTVARD</strong></h1>
+    <p>Ici, on te fait découvrir les œuvres d'art les plus cool ! Prépare-toi à une expérience en ligne de ouf où tu vas en prendre plein les mirettes. Viens t'éclater avec nous et laisse parler ton imagination ! C'est parti pour l'art moderne !</p>
+  </div>
+  <div class="grid_home">
+    <article class="card">
+      <%= image_tag "vague.jpg", class:"image" %>
+      <div class="centered-children">
+        <%= link_to "visiter la galerie", root_path, class: "button" %>
+      </div>
+    </article>
+    <article class="card">
+      <%= image_tag "game.jpg", class:"image" %>
+      <div class="centered-children">
+        <%= link_to "voir la game room", root_path, class: "button" %>
+      </div>
+    </article>
+    <article class="card">
+      <%= image_tag "painting.jpg", class:"image" %>
+      <div class="centered-children">
+        <%= link_to "paint", root_path, class: "button" %>
+      </div>
+    </article>
+  </div>
+</div>
