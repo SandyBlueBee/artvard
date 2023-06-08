@@ -49,16 +49,13 @@ export default class extends Controller {
 
   start() {
     this.cardTargets.forEach(card => {
+      console.log(card);
       card.classList.add("upsidedown")
       card.classList.remove("disabled")
     })
   }
 
   restart() {
-    this.cardTargets.forEach(card => {
-      card.classList.remove("remove")
-      card.classList.remove("upsidedown")
-      window.location.reload()
-    })
+    window.location.reload()
   }
 }
