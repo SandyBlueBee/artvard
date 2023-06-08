@@ -11,10 +11,33 @@
  justify-content: center;
  align-items: center;
  transition: all 0.3s;
+ position: relative;
+ &::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('homepage/card-back.jpg');
+  background-size: cover;
+  content: '';
+   transform: rotateY(180deg);
+   backface-visibility:hidden;
+   height: 100%;
+   width: 100%;
+  }
   &.upsidedown{
-    background-color: black;
+    transform: rotateY(180deg);
+    &::after {
+      transform: rotateY(0);
+    }
   }
   &.remove {
     opacity: 0;
   }
+}
+
+.image-memory{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
 }

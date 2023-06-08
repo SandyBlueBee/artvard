@@ -58,6 +58,7 @@ export default class extends Controller {
     this.cardTargets.forEach(card => {
       card.classList.remove("remove")
       card.classList.remove("upsidedown")
+      window.location.reload()
     })
   }
 }
