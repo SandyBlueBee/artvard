@@ -1,7 +1,10 @@
 <div class="artworks-list">
   <% artworks.each do |artwork| %>
     <div class="artwork-card">
-      <%= image_tag image_url(artwork.image) %>
+        <%# <%=link_to(artwork_path(artwork.id)) "#{artwork.title}", artwork_path(artwork.id) %>
+        <%= link_to(artwork_path(artwork.id)) do %>
+          <%= image_tag image_url(artwork.image)%>
+        <% end %>
     </div>
   <% end %>
 </div>
