@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MemoryController from "./memory_controller"
 application.register("memory", MemoryController)
+
+import PaintController from "./paint_controller"
+application.register("paint", PaintController)
