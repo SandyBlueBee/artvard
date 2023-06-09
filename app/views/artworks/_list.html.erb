@@ -1,0 +1,7 @@
+<div class="artworks-list">
+  <% artworks.each do |artwork| %>
+    <div class="artwork-card">
+      <%= image_tag image_url(artwork.image) %>
+    </div>
+  <% end %>
+</div>

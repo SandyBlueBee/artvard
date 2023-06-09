@@ -1,6 +1,67 @@
+<main id="gallery">
+  <div class="filler"></div>
+  <div class="filler"></div>
+  <div class="filler"></div>
 
-<% @sample.each do |artwork| %>
-<div class= "mb-4">
- <%= image_tag image_url(artwork.image)  %>
-</div>
-<% end %>
+  <%# infinite scroll %>
+
+  <div class="artworks-list-wrapper">
+    <%= render "list", artworks: @sample %>
+  </div>
+
+  <div class="filler"></div>
+
+  <%# scroll sideway %>
+
+  <%# <aside class="helper">Scroll sideways</aside>
+
+  <div id="parallax-gallery">
+    <figure class="rellax">
+      <img src="https://source.unsplash.com/aiyBwbrWWlo" alt="Me coding">
+      <figcaption class="rellax" data-rellax-speed="1">Me coding</figcaption>
+    </figure>
+    <figure class="rellax">
+      <img src="https://source.unsplash.com/EaJm0ZfO84U" alt="Bronte Beach, Australia">
+      <figcaption class="rellax" data-rellax-speed="1">Bronte Beach, Australia</figcaption>
+    </figure>
+    <figure class="rellax">
+      <img src="https://source.unsplash.com/e9rkZKjdlSc" alt="The moon">
+      <figcaption class="rellax" data-rellax-speed="1">The moon</figcaption>
+    </figure>
+  </div>
+
+  <script src="https://cdn.rawgit.com/dixonandmoe/rellax/master/rellax.min.js"></script>
+
+  <script>
+    var rellax = new Rellax('.rellax',{horizontal: true, vertical: false, speed: 0.5});
+  </script> %>
+
+  <%# full-gallery %>
+
+  <div class="filler"></div>
+  <div class= "artworks-full-gallery-wrapper">
+    <%# search-bar %>
+    <div class="row col-12 justify-content-center">
+      <div class="col-8 my-1">
+        <%= form_with url: artworks_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Rechercher un artiste ou une oeuvre"
+            %>
+          <%= submit_tag "rechercher", name: "", class: "btn btn-info"  %>
+        <% end %>
+      </div>
+    </div>
+    <%# artworks %>
+  <div class="filler"></div>
+    <%= render "full_gallery", artworks: @artworks %>
+  </div>
+
+    <%# fillers %>
+
+  <div class="filler"></div>
+  <div class="filler"></div>
+  <div class="filler"></div>
+
+</main>

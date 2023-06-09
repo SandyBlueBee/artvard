@@ -1,0 +1,11 @@
+<div class="columns pb-4 pt-4">
+  <% if artworks.any? %>
+    <% artworks.each do |artwork| %>
+      <div class="artwork-card mb-4">
+        <%= image_tag image_url(artwork.image) %>
+      </div>
+    <% end %>
+  <% else %>
+    <em>Aucun résultats.</em>
+  <% end %>
+</div>
