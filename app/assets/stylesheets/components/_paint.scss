@@ -1,0 +1,26 @@
+#canvas {
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
+.paint-color-palette {
+  display: flex;
+  padding: 10px;
+  margin: 0 20px;
+  border: 1px solid goldenrod;
+}
+
+.paint-nav-color {
+  border: 1px solid goldenrod;
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  background-color: var(--tooltip-color);
+  color: var(--tooltip-color);
+}
+
+.paint-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
