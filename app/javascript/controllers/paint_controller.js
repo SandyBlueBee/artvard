@@ -8,17 +8,13 @@ export default class extends Controller {
   connect() {
     console.log("paint.js has arrived");
     this.canvasTarget.height = 500;
-    this.canvasTarget.width = 600;
+    this.canvasTarget.width = 900;
+    this.brushSize = 1;
     this.prevX = null
     this.prevY = null
     this.draw = false
     this.ctx = this.canvasTarget.getContext("2d")
-    this.ctx.lineWidth = 50;
-
-
-    // const ctx = canvas.getContext("2d")
-    // canvas.addEventListener("mousemove", this.draw.bind(this))
-    // canvas.addEventListener("mousemove", this.coordinates.bind(this))
+    // this.ctx.lineWidth = 50;
   }
 
   resetPreviousLocation() {
@@ -44,12 +40,14 @@ export default class extends Controller {
       // catch current position
       var currentX = event.clientX - this.canvasTarget.offsetLeft;
       var currentY = event.clientY - this.canvasTarget.offsetTop;
+      console.log(event.clientX)
+      console.log(this.canvasTarget.offsetLeft)
 
       // create line through path
       this.ctx.beginPath(this.prevX, this.prevY);
       this.ctx.moveTo(this.prevX, this.prevY);
       // this.ctx.lineTo(currentX, currentY);
-      this.ctx.arc(currentX, currentY, 5, 0, 2* Math.PI);
+      this.ctx.arc(currentX, currentY, this.brushSize, 0, 2* Math.PI);
       this.ctx.fill()
       // this.ctx.stroke()
 
@@ -74,5 +72,10 @@ export default class extends Controller {
     var a = document.createElement("a")
     a.href = data.download = "sketch.png"
     a.click()
+  }
+
+  changeBrushSize(event){
+    console.log(event)
+    this.brushSize = event.currentTarget.value
   }
 }
