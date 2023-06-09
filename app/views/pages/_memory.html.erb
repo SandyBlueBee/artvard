@@ -1,6 +1,5 @@
-<div class="container" data-controller="memory">
-  <button class="button" data-action="click->memory#start">start</button>
-  <button class="button" data-action="click->memory#restart">restart</button>
+<div class='nav-placeholder'></div>
+<div class="game_container" data-controller="memory">
   <div class='flip-card-grid'>
     <% cards.each do |card| %>
       <div class="card disabled" data-action="click->memory#flip" data-memory-target="card" data-id="<%= card[:id] %>">
@@ -11,5 +10,9 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+  <div class='centered-children space'>
+    <button class="button" data-action="click->memory#start">Start</button>
+    <button class="button" data-action="click->memory#restart">Restart</button>
   </div>
 </div>
