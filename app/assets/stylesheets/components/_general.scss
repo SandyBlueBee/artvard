@@ -11,7 +11,7 @@ body {
 }
 
 .our_container {
-  margin: 40px 120px;
+  margin: auto 20%;
 }
 
 .space {
@@ -32,8 +32,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-.nav-placeholder {
+.nav-placeholder{
   padding: 50px;
 }
+

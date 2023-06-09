@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
-
+// import { JSConfetti } from "js-confetti";
+// import { Alert } from "bootstrap";
 // Connects to data-controller="memory"
 export default class extends Controller {
   static targets = ["card"]
@@ -41,15 +42,19 @@ export default class extends Controller {
       this.cardTargets.forEach(card => {
         card.classList.remove("disabled")
       })
-
+      let cardsRemoved = document.querySelectorAll(".remove");
+      if (cardsRemoved.length === 20) {
+        // const jsConfetti = new JSConfetti()
+        // jsConfetti.addConfetti()
+        // const popup = document.querySelector("#alert-game");
+        // popup.classList.remove("d-none");
+      };
     }, 1000);
-
 
   }
 
   start() {
     this.cardTargets.forEach(card => {
-      console.log(card);
       card.classList.add("upsidedown")
       card.classList.remove("disabled")
     })
@@ -58,4 +63,7 @@ export default class extends Controller {
   restart() {
     window.location.reload()
   }
+
+
+
 }
