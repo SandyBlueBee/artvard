@@ -2,7 +2,10 @@
   <% if artworks.any? %>
     <% artworks.each do |artwork| %>
       <div class="artwork-card mb-4">
-        <%= image_tag image_url(artwork.image) %>
+        <%# <%=link_to( image_tag image_url(artwork.image) ) "#{artwork.title}", artwork_path(artwork.id) %>
+        <%= link_to(artwork_path(artwork.id)) do %>
+          <%= image_tag image_url(artwork.image)%>
+        <% end %>
       </div>
     <% end %>
   <% else %>

@@ -19,7 +19,6 @@
 
 .artworks-list-wrapper {
   display: block;
-  overflow: auto;
   overflow-x: hidden;
 
 }
@@ -29,11 +28,12 @@
   // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   // grid-gap: 20px;
   display: flex;
-  max-height: 650px;
+  max-height: 600px;
+  height: 600px;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1.5rem;
-  animation: auto-scroll 80s linear infinite;
+  animation: auto-scroll 60s linear infinite;
   // overflow-x: hidden;
 
 }
@@ -67,6 +67,9 @@
 
 .columns {
   column-count: 5;
+  margin: 0 5%;
+
+
 }
 
 // .artworks-full-gallery {
@@ -83,8 +86,6 @@
 
   display: flex;
   align-items: center;
-  //width: 50vw;
-
   max-width: 18em;
 
   position: relative;
