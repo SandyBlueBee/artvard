@@ -6,13 +6,13 @@
         <% if card.keys.include?(:image) %>
             <%= image_tag image_url(card[:image]), class: "image-memory" %>
         <% else %>
-            <%= card[:title] %>
+            <p><%= card[:title] %></p>
         <% end %>
       </div>
     <% end %>
   </div>
   <div class='centered-children space'>
-    <button class="button" data-action="click->memory#start">Start</button>
-    <button class="button" data-action="click->memory#restart">Restart</button>
+    <button class="button game-button" data-action="click->memory#start">Start</button>
+    <button class="button game-button" data-action="click->memory#restart">Restart</button>
   </div>
 </div>

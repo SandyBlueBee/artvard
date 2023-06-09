@@ -24,8 +24,18 @@
         <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #C2C2C2" data-color="#C2C2C2"></div>
         <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #474747" data-color="#474747"></div>
         <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #000000" data-color="#000000"></div>
-        <button class="clear" data-action="click->paint#clearCanvas">clear</button>
-        <button class="save" data-action="click->paint#savePng">save</button>
+      </div>
+      <div class="paint-color-palette">
+        <button class="clear button paint-button" data-action="click->paint#clearCanvas">clear</button>
+        <button class="save button paint-button" data-action="click->paint#savePng">save</button>
+        <p>brush size: </p>
+        <select name="paint-brush-size" id="paint-brush-size" data-action= "change->paint#changeBrushSize">
+          <% num = 0 %>
+          <% 50.times do %>
+            <% num = num+1 %>
+            <option value=<%= num %> ><%= num %></option>
+          <% end %>
+        </select>
       </div>
     </div>
   </div>

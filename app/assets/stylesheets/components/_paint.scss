@@ -5,9 +5,11 @@
 
 .paint-color-palette {
   display: flex;
-  padding: 10px;
-  margin: 0 20px;
-  border: 1px solid goldenrod;
+  padding: 2px;
+  gap: 4px;
+  margin: 5px 20px;
+
+  // border: 1px solid goldenrod;
 }
 
 .paint-nav-color {
@@ -23,4 +25,10 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+}
+
+.paint-board {
+  position: absolute;
+  right: 50px;
 }
