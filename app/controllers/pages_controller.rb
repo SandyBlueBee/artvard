@@ -5,8 +5,12 @@ class PagesController < ApplicationController
   end
 
   def game
-    @cards = Artwork.all.sample(10)
-    @cards += @cards
+    @cards_selected = Artwork.all.sample(10)
+    @cards = []
+    @cards_selected.each do |card|
+      @cards.push({title: card.title, id: card.id})
+      @cards.push({image: card.image, id: card.id})
+    end
     @cards = @cards.shuffle
   end
 
