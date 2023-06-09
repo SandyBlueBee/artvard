@@ -1,0 +1,32 @@
+<div class="nav-placeholder"></div>
+<div class="our-container paint-flex">
+  <div>
+    <h1>NO PAINT NO GAME</h1>
+    <div class="space"></div>
+  </div>
+  <div>
+    <div data-controller="paint">
+      <canvas id="canvas" data-action="mousedown->paint#drawToggle mousemove->paint#drawing mouseup->paint#resetPreviousLocation paint#drawToggle" data-paint-target="canvas"></canvas>
+      <div class="paint-color-palette">
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #F4797C" data-color="#F4797C"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #F6AF7D" data-color="#F6AF7D"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FBC366" data-color="#FBC366"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FCDA66" data-color="#FCDA66"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FDF567" data-color="#FDF567"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #CFEC67" data-color="#CFEC67"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #A9D8C4" data-color="#A9D8C4"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #95D1F3" data-color="#95D1F3"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #869ACE" data-color="#869ACE"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #9187C1" data-color="#9187C1"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #AD8BC1" data-color="#AD8BC1"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #DF93BF" data-color="#DF93BF"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #ffffff" data-color="#ffffff"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #C2C2C2" data-color="#C2C2C2"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #474747" data-color="#474747"></div>
+        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #000000" data-color="#000000"></div>
+        <button class="clear" data-action="click->paint#clearCanvas">clear</button>
+        <button class="save" data-action="click->paint#savePng">save</button>
+      </div>
+    </div>
+  </div>
+</div>

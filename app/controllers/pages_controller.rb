@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home game]
+  skip_before_action :authenticate_user!, only: %i[home game paint]
 
   def home
   end
@@ -12,5 +12,8 @@ class PagesController < ApplicationController
       @cards.push({image: card.image, id: card.id})
     end
     @cards = @cards.shuffle
+  end
+
+  def paint
   end
 end
