@@ -12,3 +12,6 @@ application.register("memory", MemoryController)
 
 import PaintController from "./paint_controller"
 application.register("paint", PaintController)
+
+import SoloController from "./solo_controller"
+application.register("solo", SoloController)

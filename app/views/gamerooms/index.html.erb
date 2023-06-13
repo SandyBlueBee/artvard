@@ -1,0 +1,12 @@
+<div class="container">
+  <div>
+    <%= "Choisi ta Gameroom" %>
+  </div>
+  <% @gamerooms.each do |gameroom| %>
+    <%= link_to gameroom.name, gameroom_path(gameroom) %>
+  <% end %>
+  <div>
+    <%= link_to "Nouvelle Gameroom", new_gameroom_path %>
+  </div>
+  <%= link_to "Retour", choice_gamerooms_path %>
+</div>
