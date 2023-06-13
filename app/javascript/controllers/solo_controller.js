@@ -1,28 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
-import { createConsumer } from "@rails/actioncable"
 
 export default class extends Controller {
   static targets = ["card", "players", "timer"]
   static values = { gameroomId: Number, currentUserId: Number }
 
   connect(){
-    console.log("lzerhjvber");
+    console.log("lzerhjvberkjnbub");
     this.counter = 0
-    this.channel = createConsumer().subscriptions.create(
-      {
-        channel: "GameroomChannel",
-        id: this.gameroomIdValue },
-      {
-        received: (data) => {
-          this[data.action](data)
-        }
-      },
-    )
   }
 
-  insertNewPlayer(data) {
-    this.playersTarget.insertAdjacentHTML("beforeend", data.partial)
+  start() {
+    this.updateTimer();
   }
+
+  // insertNewPlayer(data) {
+  //   this.playersTarget.insertAdjacentHTML("beforeend", data.partial)
+  // }
 
   flip (event) {
     if (event.currentTarget.classList.contains("disabled")) return;
@@ -49,36 +42,6 @@ export default class extends Controller {
           }
         });
         console.log("maaaatch");
-        fetch(`/gamerooms/${this.gameroomIdValue}/`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-        })
-        console.log(this.cardTargets.every(card => card.classList.contains("remove")));
-        if (this.cardTargets.every(card => card.classList.contains("remove"))) {
-          document.body.innerHTML += `
-          <div style="
-            position: absolute; top: 0; width: 100vw; height: 100vh; display: flex;
-            align-items: center;
-            justify-content: center;
-          ">
-              <div style="
-                background: rgba(255, 255, 255, 0.35);
-                border-radius: 8px;
-                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(9.2px);
-                -webkit-backdrop-filter: blur(9.2px);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                height: 20vh;
-                width: 80vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-                  <p>GG tu as gagné gros bg de la street style</p>
-              </div>
-        </div>`
-
-        }
       }
       if (this.counter % 2 === 0) {
         this.id = null
@@ -97,11 +60,6 @@ export default class extends Controller {
 
   score(data) {
     console.log(data);
-    this.playersTarget.querySelector(`#player_${data.id}`).outerHTML = data.partial
-  }
-
-  start() {
-    this.channel.perform("start")
   }
 
   updateTimer(data) {
