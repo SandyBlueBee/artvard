@@ -1,16 +1,17 @@
 footer {
   height: 60px;
-  background-color: #1F1F33;
+  background-color: #EDE9ED;
   width: 100%;
-  color: white;
+  color: #F6F3F6;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
   bottom: 0px;
 }
 
 footer p, footer h3 {
-  color: #3E3E65;
+  color: #5C485D;
   line-height: 20px;
 }

@@ -1,41 +1,71 @@
 <div class="nav-placeholder"></div>
-<div class="our-container paint-flex">
+<div class="our-container paint-flex" data-controller="paint">
   <div>
     <h1>NO PAINT NO GAME</h1>
     <div class="space"></div>
+    <div data-paint-target="image">
+      <%= render "artworks/artwork", artwork: @artwork %>
+    </div>
+    <select name="change-artpiece" id="change-artpiece" data-action="change->paint#changeArtpiece">
+      <% @artworks.each do |artwork| %>
+        <option value=<%= artwork.id %>><%=artwork.title%></option>
+      <% end %>
+    </select>
   </div>
   <div>
-    <div data-controller="paint">
+    <div >
       <canvas id="canvas" data-action="mousedown->paint#drawToggle mousemove->paint#drawing mouseup->paint#resetPreviousLocation paint#drawToggle" data-paint-target="canvas"></canvas>
       <div class="paint-color-palette">
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #F4797C" data-color="#F4797C"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #F6AF7D" data-color="#F6AF7D"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FBC366" data-color="#FBC366"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FCDA66" data-color="#FCDA66"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #FDF567" data-color="#FDF567"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #CFEC67" data-color="#CFEC67"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #A9D8C4" data-color="#A9D8C4"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #95D1F3" data-color="#95D1F3"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #869ACE" data-color="#869ACE"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #9187C1" data-color="#9187C1"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #AD8BC1" data-color="#AD8BC1"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #DF93BF" data-color="#DF93BF"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #ffffff" data-color="#ffffff"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #C2C2C2" data-color="#C2C2C2"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #474747" data-color="#474747"></div>
-        <div class="paint-nav-color" data-action="click->paint#changeColor" style="--tooltip-color: #000000" data-color="#000000"></div>
-      </div>
-      <div class="paint-color-palette">
-        <button class="clear button paint-button" data-action="click->paint#clearCanvas">clear</button>
-        <button class="save button paint-button" data-action="click->paint#savePng">save</button>
-        <p>brush size: </p>
+        <%# colors = ["hsb(0)","#F6AF7D", "#FBC366", "#FCDA66", "#FDF567", "#CFEC67", "#A9D8C4", "#95D1F3", "#869ACE", "#9187C1", "#AD8BC1", "#DF93BF", "#ffffff", "#C2C2C2", "#474747", "#000000"] %>
+        <% hue = 0 %>
+        <% 17.times do %>
+          <% hue = hue + 20 %>
+          <% color = "hsl(#{hue},75%,60%)"%>
+          <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: <%=color%>" data-color=<%=color%>></div>
+        <% end %>
+        <p>taille : </p>
         <select name="paint-brush-size" id="paint-brush-size" data-action= "change->paint#changeBrushSize">
+          <option value=<%= 0.5 %> ><%= 0.5 %></option>
+          <option value=<%= 0.75 %> ><%= 0.75 %></option>
           <% num = 0 %>
           <% 50.times do %>
             <% num = num+1 %>
-            <option value=<%= num %> ><%= num %></option>
+            <% if num == 4 %>
+              <option value=<%= num %> selected="selected"><%= num %></option>
+            <% else %>
+              <option value=<%= num %> ><%= num %></option>
+            <% end %>
           <% end %>
         </select>
+        <p>luminosité : </p>
+        <select name="paint-brush-brightness" id="paint-brush-brightness" data-action= "change->paint#changeBrightness">
+          <% num = 0 %>
+          <% 100.times do %>
+            <% num = num+1 %>
+            <% if num == 65 %>
+              <option value=<%= num %> selected="selected"><%= num %></option>
+            <% else %>
+              <option value=<%= num %> ><%= num %></option>
+            <% end %>
+          <% end %>
+        </select>
+        <p>saturation : </p>
+        <select name="paint-brush-saturation" id="paint-brush-saturation" data-action= "change->paint#changeSaturation">
+          <% num = 0 %>
+          <% 100.times do %>
+            <% num = num+1 %>
+            <% if num == 90 %>
+              <option value=<%= num %> selected="selected"><%= num %></option>
+            <% else %>
+              <option value=<%= num %> ><%= num %></option>
+            <% end %>
+          <% end %>
+        </select>
+        <p>Réglages :</p>
+      </div>
+      <div class="paint-color-palette">
+        <button class="clear button game-button" data-action="click->paint#clearCanvas">effacer</button>
+        <button class="save button game-button" data-action="click->paint#savePng">sauvegarder</button>
       </div>
     </div>
   </div>

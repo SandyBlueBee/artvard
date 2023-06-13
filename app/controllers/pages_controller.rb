@@ -17,5 +17,13 @@ class PagesController < ApplicationController
   end
 
   def paint
+    @artworks = Artwork.all
+    params[:id].present? ? @artwork = Artwork.find(params[:id]) : @artwork = @artworks.sample
+    respond_to do |format|
+      format.html
+      format.text do
+        render partial: "artworks/artwork", locals: { artwork: @artwork}, formats: [:html]
+      end
+    end
   end
 end
