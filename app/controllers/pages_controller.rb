@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home game paint]
 
   def home
+    @artworks = Artwork.all
+    @sample = @artworks.sample(15)
   end
 
   def game
