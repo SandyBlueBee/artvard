@@ -1,5 +1,5 @@
 .button {
-  padding: 10px 22px;
+  // padding: 10px 22px;
   border-radius: 5px;
   text-decoration: none;
   color: white;
@@ -21,22 +21,24 @@ button {
 
 // button types
 
-.galerie-button {
+.game-button {
+  padding: 6px 12px;
   background-color: #D39C4A;
   box-shadow: 0px 5px 0px 0px #835C20;
 }
 
-.galerie-button:hover {
+.game-button:hover {
   background-color: #DBAE6B;
   ;
 }
 
-.game-button {
+.navigation-button {
+  padding: 10px 22px;
   background-color: #5C4360;
   box-shadow: 0px 5px 0px 0px #3A2A3C;
 }
 
-.game-button:hover {
+.navigation-button:hover {
   background-color: #7F5C84;
 }
 

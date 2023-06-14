@@ -5,17 +5,12 @@ export default class extends Controller {
   static values = { gameroomId: Number, currentUserId: Number }
 
   connect(){
-    console.log("lzerhjvberkjnbub");
     this.counter = 0
   }
 
   start() {
     this.updateTimer();
   }
-
-  // insertNewPlayer(data) {
-  //   this.playersTarget.insertAdjacentHTML("beforeend", data.partial)
-  // }
 
   flip (event) {
     if (event.currentTarget.classList.contains("disabled")) return;
