@@ -1,0 +1,64 @@
+
+.choiceContainer {
+  gap: 5%;
+}
+
+.choiceContainer .choiceCard
+{
+    max-width: 300px;
+    height: 215px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    border: 10px;
+    border-radius: 8px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+  }
+.choiceContainer .choiceCard:hover
+{   
+    // height: 60vh;
+    height: 350px;
+}
+.choiceContainer .choiceCard .imgContainer
+{
+    position: relative;
+    width:250px;
+    height:170px;
+    top:-50px;
+    left:10px;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.choiceContainer .choiceCard .imgContainer img
+{
+    max-width: 100%;
+    border-radius: 8px;
+
+}
+.choiceContainer .choiceCard .choiceContent
+{   
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: left ;
+    color:#111;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+}
+.choiceContainer .choiceCard:hover .choiceContent
+{   
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+@media (max-width: 330px){
+    .choiceContainer .choiceCard .imgContainer{
+        left: -2px;
+    }
+}
