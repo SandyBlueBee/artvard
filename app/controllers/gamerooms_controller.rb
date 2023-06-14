@@ -10,7 +10,7 @@ class GameroomsController < ApplicationController
   def show
     @gameroom = Gameroom.find(params[:id])
     @players = @gameroom.players
-    @cards_selected = Artwork.all.sample(1)
+    @cards_selected = Artwork.all.sample(10)
     @cards = []
     @cards_selected.each do |card|
       @cards.push({ title: card.title, id: card.id })

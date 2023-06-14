@@ -2,7 +2,8 @@
   max-width: 30vw;
   max-height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
 }
 
@@ -15,6 +16,13 @@
   aspect-ratio: attr(width) / attr(height);
 }
 
+
+.flex-top {
+  max-height: 50vh;
+  display: flex;
+  gap: 5%;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -25,7 +33,7 @@
 
 .artwork-info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 60px;
+  grid-template-columns: 1fr 60px;
   width: 100%;
   border: 1px solid #EDE9ED;
 }
@@ -39,13 +47,15 @@
 
 .show-card {
   margin: 2% 15%;
-  max-height: 70vh;
-  padding: 50px;
+  padding: 40px;
   // background-color: white;
   background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.4));
   border-radius: 20px;
 }
 
+.show-card h3 {
+  text-align: right;
+}
 .artwork-description {
   overflow: scroll;
   scrollbar-width: none;
