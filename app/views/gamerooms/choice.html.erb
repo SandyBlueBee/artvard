@@ -1,9 +1,40 @@
-<div class="container">
-  <div class="card">
-    <%= link_to "solo", game_path %>
-  </div>
-  <div class="card">
-    <%= link_to "multi", gamerooms_path %>
-  </div>
-  <%= link_to "Retour", root_path %>
+<div class="choicePage">
+<div class="filler"></div>
+<div class="filler"></div>
+<%# <div class="btn btn-warning"><%= link_to "Retour", root_path </div> %>
+<div class="d-flex justify-content-center">
+  <h3 class=" w-50 d-flex justify-content-center fst-italic">"T'es un quand même pas Devin? Ci ?"</h3>
+</div>
+<div class="filler"></div>
+
+<div class="choiceContainer d-flex align-items-center justify-content-center position-relative flex-wrap">
+  <%# 1 Joueur %>
+  <%= link_to(game_path)do %>
+    <div class="choiceCard d-flex position-relative flex-column">
+          <div class='imgContainer'>
+              <%= image_tag ("choice/choice_logo1.png") %>
+          </div>
+          <div class="choiceContent">
+              <%# <h2>1 Joueur</h2> %>
+              <p>Fais travailler ta mémoire </p>
+              <p>12 paires de cartes à trouver, </p>
+              <p>Relie les auteurs à leur tableau, tu seras incollable!</p>
+          </div>
+      </div>
+  <% end %>
+  <%# 2 Joueurs %>
+  <%= link_to(gamerooms_path) do %>
+    <div class="choiceCard d-flex position-relative flex-column">
+          <div class='imgContainer'>
+            <%= image_tag ("choice/choice_logo2.png") %>
+          </div>
+          <div class="choiceContent">
+              <%# <h2>2 Joueurs</h2> %>
+              <p>Meme principes tu t'en doutes bien</p>
+              <p>Mais cette fois-ci montres à ton pote que t'es plus rapide que lui.</p>
+              <p>Le premier à finir l'emporte!</p>
+          </div>
+      </div>
+  <% end %>
+ </div>
 </div>
