@@ -1,10 +1,11 @@
-<div class="game-background"
+<main>
+  <div class="game-background"
     data-controller="memory"
     data-memory-current-user-id-value="<%= current_user.id %>"
     data-memory-gameroom-id-value="<%= @gameroom.id %>">
 
       <%# <div class="players " data-memory-target="players"> %>
-        <%# <% @players.each do |player| %> 
+        <%# <% @players.each do |player| %>
           <%# <%= render "players/player", player: player %>
         <%# <% end %>
       <%# </div> %>
@@ -19,5 +20,5 @@
   <div class="card-container ">
     <%= render partial: "pages/memory", locals: {gameroom: @gameroom, players: @players, cards: @cards} %>
   </div>
-
-</div>
+  </div>
+</main>
