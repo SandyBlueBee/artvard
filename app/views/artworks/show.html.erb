@@ -1,12 +1,16 @@
-<h1><%= @artwork.title %></h1>
-
-<div>
-  <%= image_tag image_url(@artwork.image)  %>
-
-  <div>
-  <h2><%= @artwork.artist %></h2>
-  <p><%= @artwork.description %></p>
+<main>
+  <div class="flex-top show-card">
+    <div class="artwork-image" >
+      <%= image_tag image_url(@artwork.image), class:"box-shadow" %>
+    </div>
+    <div class="flex-column">
+      <div class="artwork-info-grid">
+        <strong><p><%= @artwork.title %></p></strong>
+        <strong><p><%= @artwork.artist %></p></strong>
+        <strong><p><%= @artwork.date %></p></strong>
+      </div>
+      <p class="artwork-description"><%= @artwork.description %></p>
+      <%= link_to "paint me", paint_path(@artwork), class:"button game-button"%>
+    </div>
   </div>
-</div>
- <p>Réalisée en <%= @artwork.date %></p>
-<%= link_to "paint me", paint_path(@artwork)%>
+</main>

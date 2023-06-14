@@ -7,8 +7,8 @@ export default class extends Controller {
 
   connect() {
     console.log("paint.js has arrived");
-    this.canvasTarget.height = 500;
-    this.canvasTarget.width = 900;
+    this.canvasTarget.height = 400;
+    this.canvasTarget.width = 700;
     this.brushSize = 3;
     this.prevX = null
     this.prevY = null

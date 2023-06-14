@@ -5,12 +5,14 @@
   color: white;
   font-size: 1rem;
   border: none;
+  position:relative;
+  bottom: 5px;
 }
 
 .button:active{
   box-shadow: none;
   position:relative;
-  top: 5px;
+  bottom: 0px;
 }
 
 button {
