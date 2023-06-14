@@ -8,7 +8,7 @@ class GameroomsController < ApplicationController
   def show
     @gameroom = Gameroom.find(params[:id])
     @players = @gameroom.players
-    @cards_selected = Artwork.all.sample(10)
+    @cards_selected = Artwork.all.sample(1)
     @cards = []
     @cards_selected.each do |card|
       @cards.push({ title: card.title, id: card.id })
@@ -23,6 +23,7 @@ class GameroomsController < ApplicationController
 
   def create
     @gameroom = Gameroom.new(gameroom_params)
+    Player.create(gameroom: @gameroom, user: current_user)
     if @gameroom.save
       redirect_to gameroom_path(@gameroom)
     else

@@ -3,15 +3,18 @@
     data-memory-current-user-id-value="<%= current_user.id %>"
     data-memory-gameroom-id-value="<%= @gameroom.id %>">
 
-    <div class="players" data-memory-target="players">
-      <% @players.each do |player| %>
-        <%= render "players/player", player: player %>
-      <% end %>
-    </div>
+      <%# <div class="players " data-memory-target="players"> %>
+        <%# <% @players.each do |player| %> 
+          <%# <%= render "players/player", player: player %>
+        <%# <% end %>
+      <%# </div> %>
+
 
   <% unless @players.where(user: current_user).any? %>
     <%= button_to "Rejoindre", gameroom_players_path(@gameroom) %>
   <% end %>
+
+  <canvas id="my-canvas"></canvas>
 
   <div class="card-container ">
     <%= render partial: "pages/memory", locals: {gameroom: @gameroom, players: @players, cards: @cards} %>
