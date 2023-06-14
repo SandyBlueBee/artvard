@@ -1,14 +1,30 @@
 <main>
   <div class="container">
     <div>
-      <%= "Choisi ta Gameroom" %>
+      <%# <%= "Choisi ta Gameroom" %>
     </div>
-    <% @gamerooms.each do |gameroom| %>
-      <%= link_to gameroom.name, gameroom_path(gameroom) %>
-    <% end %>
     <div>
-      <%= link_to "Nouvelle Gameroom", new_gameroom_path %>
     </div>
+    <table class="table table-hover">
+    <thead>
+      <tr > <p class="fw-bold">Gamerooms</p> </tr>
+    </thead>
+       <tbody>
+        <tr>
+          <th>
+            <%= link_to "+ Nouvelle Gameroom", new_gameroom_path, class: "fw-light a-primary" %>
+          </th>
+        </tr>
+        <% @gamerooms.each do |gameroom| %>
+          <tr>
+            <th>
+              <%= link_to gameroom.name, gameroom_path(gameroom), class: "fw-light a-primary" %>
+            </th>
+          </tr>
+        <% end %>
+    </tbody>
+
+  </table>
     <%= link_to "Retour", choice_gamerooms_path %>
   </div>
 </main>

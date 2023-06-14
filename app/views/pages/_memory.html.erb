@@ -1,5 +1,5 @@
 <div class="game_container">
-  <div class='scoreTable'>
+  <div class='scoreTable box-shadow'>
     <div class="players " data-memory-target="players">
       <% @players.each do |player| %>
         <%= render "players/player", player: player %>
@@ -7,7 +7,6 @@
     </div>
     <div>
       <button class="button game-button" data-action="click->memory#start">Start</button>
-      <button class="button game-button" data-action="click->memory#restart">Restart</button>
     </div>
   </div>
   <p data-memory-target="timer"></p>

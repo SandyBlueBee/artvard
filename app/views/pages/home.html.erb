@@ -5,26 +5,26 @@
   <%# arriere plan defillant %>
   <div class="banner">
     <div>
-      <h1>Bienvenue à <strong>ARTVARD</strong></h1>
+      <h1><i>Bienvenue à <strong>ARTVARD</i></strong></h1>
       <p>Ici, on te fait découvrir les peintures qui ont marqué l'Histoire de l'art. À travers notre galerie virtuelle, on te permet d'apprendre et de reconnaître toutes ces œuvres que la Pop-culture a copieusement détournées, et ça, on en met notre oreille à couper!</p>
     </div>
     <div class="grid_home">
       <article class="card">
-        <%= image_tag "homepage/vague.jpg", class:"image" %>
+        <%= image_tag "homepage/morse-louvre-thumbnail.jpg", class:"image" %>
         <div class="centered-children">
-          <%= link_to "Visiter la Galerie", artworks_path, class: "button game-button" %>
+          <%= link_to "Visiter la Galerie", artworks_path, class: "button navigation-button" %>
         </div>
       </article>
       <article class="card">
-        <%= image_tag "homepage/game.jpg", class:"image" %>
+        <%= image_tag "homepage/Paul_Cezanne_Les_joueurs_de_cartes.jpg", class:"image" %>
         <div class="centered-children">
-          <%= link_to "Voir la Game Room", choice_gamerooms_path, class: "button game-button" %>
+          <%= link_to "Voir la Game Room", choice_gamerooms_path, class: "button navigation-button" %>
         </div>
       </article>
       <article class="card">
-        <%= image_tag "homepage/painting.jpg", class:"image" %>
+        <%= image_tag "homepage/rockwell.jpg", class:"image" %>
         <div class="centered-children">
-          <%= link_to "Paint", paint_path, class: "button game-button" %>
+          <%= link_to "Paint", paint_path, class: "button navigation-button" %>
         </div>
       </article>
     </div>

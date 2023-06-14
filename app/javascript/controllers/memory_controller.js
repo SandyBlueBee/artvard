@@ -7,7 +7,6 @@ export default class extends Controller {
   static values = { gameroomId: Number, currentUserId: Number }
 
   connect(){
-    console.log("lzerhjvber");
     this.counter = 0
     this.channel = createConsumer().subscriptions.create(
       {
@@ -70,12 +69,14 @@ export default class extends Controller {
                 -webkit-backdrop-filter: blur(9.2px);
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 height: 20vh;
-                width: 80vw;
+                width: 40vw;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
               ">
                   <p> GG tu as gagné !</p>
+                  <a class="button game-button" href="/gamerooms/${this.gameroomIdValue}">Restart</a>
               </div>
           </div>`
           this.gameOver({ id: this.currentUserIdValue })
@@ -108,6 +109,10 @@ export default class extends Controller {
 
   start() {
     this.channel.perform("start")
+  }
+
+  restart() {
+    this.channel.perform("restart")
   }
 
   updateTimer(data) {
@@ -159,6 +164,7 @@ export default class extends Controller {
           align-items: center;
           justify-content: center;">
           <p> Dommage tu as perdu ! </p>
+          <a class="button game-button" href="/gamerooms/${this.gameroomIdValue}">Restart</a>
         </div>
       </div>
     `

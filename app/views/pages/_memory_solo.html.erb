@@ -13,6 +13,7 @@
   </div>
   <div class='centered-children space'>
     <button class="button game-button" data-action="click->solo#start">Start</button>
-    <button class="button game-button" data-action="click->solo#restart">Restart</button>
+    <%= link_to "Restart", game_path, class: "button game-button" %>
+
   </div>
 </div>
