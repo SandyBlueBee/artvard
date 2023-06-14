@@ -1,6 +1,16 @@
-<div class='nav-placeholder'></div>
 <div class="game_container">
-<p data-memory-target="timer"></p>
+  <div class='scoreTable'>
+    <div class="players " data-memory-target="players">
+      <% @players.each do |player| %>
+        <%= render "players/player", player: player %>
+      <% end %>
+    </div>
+    <div>
+      <button class="button game-button" data-action="click->memory#start">Start</button>
+      <button class="button game-button" data-action="click->memory#restart">Restart</button>
+    </div>
+  </div>
+  <p data-memory-target="timer"></p>
   <div class='flip-card-grid'>
     <% cards.each do |card| %>
       <div class="card disabled upsidedown" data-action="click->memory#flip" data-memory-target="card" data-id="<%= card[:id] %>">
@@ -11,9 +21,5 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-  <div class='centered-children space'>
-    <button class="button game-button" data-action="click->memory#start">Start</button>
-    <button class="button game-button" data-action="click->memory#restart">Restart</button>
   </div>
 </div>
