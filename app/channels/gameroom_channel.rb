@@ -13,6 +13,16 @@ class GameroomChannel < ApplicationCable::Channel
     )
   end
 
+  def game_over(data)
+    GameroomChannel.broadcast_to(
+      Gameroom.find(params[:id]),
+      {
+        action: "finishGame",
+        id: data["id"]
+      }
+    )
+  end
+
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
