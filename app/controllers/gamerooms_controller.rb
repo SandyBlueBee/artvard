@@ -1,5 +1,7 @@
 class GameroomsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:update]
+  skip_before_action :authenticate_user!, only: [:choice]
+
 
   def index
     @gamerooms = Gameroom.all
