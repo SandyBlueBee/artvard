@@ -1,12 +1,12 @@
-<div class="home">
+<div class="artworks-list-wrapper">
+  <%= render "list", artworks: @sample %>
+</div>
+<main class="home">
   <%# arriere plan defillant %>
-  <div class="artworks-list-wrapper">
-    <%= render "list", artworks: @sample %>
-  </div>
   <div class="banner">
     <div>
       <h1>Bienvenue à <strong>ARTVARD</strong></h1>
-      <p>Ici, on te fait découvrir les œuvres d'art les plus cool ! Prépare-toi à une expérience en ligne de ouf où tu vas en prendre plein les mirettes. Viens t'éclater avec nous et laisse parler ton imagination ! C'est parti pour l'art moderne !</p>
+      <p>Ici, on te fait découvrir les peintures qui ont marqué l'Histoire de l'art. À travers notre galerie virtuelle, on te permet d'apprendre et de reconnaître toutes ces œuvres que la Pop-culture a copieusement détournées, et ça, on en met notre oreille à couper!</p>
     </div>
     <div class="grid_home">
       <article class="card">
@@ -29,4 +29,4 @@
       </article>
     </div>
   </div>
-</div>
+</main>
