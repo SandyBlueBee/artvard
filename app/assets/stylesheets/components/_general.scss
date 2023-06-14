@@ -3,12 +3,34 @@
   margin: 0px;
 }
 
+/* scrollbar */
 html {
   scrollbar-width: none;
 }
 
-*::-webkit-scrollbar{
-  display: none;
+// *::-webkit-scrollbar{
+//   display: none;
+// }
+
+/* width */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #EDE9ED;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
 
 body {
@@ -23,11 +45,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.flex-top {
-  display: flex;
-  gap: 5%;
 }
 
 .box-shadow {

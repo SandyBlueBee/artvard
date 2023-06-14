@@ -23,6 +23,8 @@
             <% color = "hsl(#{hue},75%,60%)"%>
             <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: <%=color%>" data-color=<%=color%>></div>
           <% end %>
+            <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: white" data-color='white'></div>
+            <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: black" data-color='black'></div>
           <p>taille : </p>
           <select name="paint-brush-size" id="paint-brush-size" data-action= "change->paint#changeBrushSize">
             <option value=<%= 0.5 %> ><%= 0.5 %></option>

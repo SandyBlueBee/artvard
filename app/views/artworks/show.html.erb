@@ -1,16 +1,22 @@
 <main>
-  <div class="flex-top show-card">
-    <div class="artwork-image" >
-      <%= image_tag image_url(@artwork.image), class:"box-shadow" %>
-    </div>
-    <div class="flex-column">
-      <div class="artwork-info-grid">
-        <strong><p><%= @artwork.title %></p></strong>
-        <strong><p><%= @artwork.artist %></p></strong>
-        <strong><p><%= @artwork.date %></p></strong>
+  <div class="show-card">
+    <h3><%= @artwork.title %></h3>
+    <div class="flex-top">
+      <div class="artwork-image" style="display=block">
+        <%= image_tag image_url(@artwork.image), class:"box-shadow" %>
       </div>
-      <p class="artwork-description"><%= @artwork.description %></p>
-      <%= link_to "paint me", paint_path(@artwork), class:"button navigation-button"%>
+      <div class="flex-column">
+        <div class="artwork-info-grid">
+          <strong><p><%= @artwork.artist %></p></strong>
+          <strong><p><%= @artwork.date %></p></strong>
+        </div>
+        <strong><p><%= @artwork.exposition %></p></strong>
+        <p class="artwork-description"><%= @artwork.description %></p>
+        <div style="display:flex; justify-content: space-between;">
+          <%= link_to "Dessine moi :)", paint_path(id: @artwork.id), class:"button game-button"%>
+          <%= link_to 'Retour', 'javascript:history.back()', class: "button game-button" %>
+        </div>
+      </div>
     </div>
   </div>
 </main>
