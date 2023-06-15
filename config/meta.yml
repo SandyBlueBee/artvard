@@ -1,0 +1,5 @@
+meta_product_name: "Artvard"
+meta_title: "Artvard"
+meta_description: "Ici, on te fait découvrir les peintures qui ont marqué l'Histoire de l'art. À travers notre galerie virtuelle, on te permet d'apprendre et de reconnaître toutes ces œuvres que la Pop-culture a copieusement détournées, et ça, on en met notre oreille à couper!"
+meta_image: "homepage/logo.png" # doit exister dans `app/assets/images/`
+# twitter_account : "@product_twitter_account" # requis pour les cartes Twitter
