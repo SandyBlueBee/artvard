@@ -6,7 +6,10 @@
       <% end %>
     </div>
     <div>
+    <% if  @players.where(user: current_user).first&.creator %>
+
       <button class="button game-button" data-action="click->memory#start">Start</button>
+    <% end %>
     </div>
   </div>
   <p data-memory-target="timer"></p>

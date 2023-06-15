@@ -1,5 +1,11 @@
 <div class="game_container">
-<p data-solo-target="timer"></p>
+  <div class='scoreTable box-shadow'>
+    <div>
+    <a class="button game-button" data-action="click->solo#start">Start</a>
+    <%= link_to "Restart", game_path, class: "button game-button" %>
+    </div>
+  </div>
+  <p data-solo-target="timer"></p>
   <div class='flip-card-grid'>
     <% cards.each do |card| %>
       <div class="card disabled upsidedown" data-action="click->solo#flip" data-solo-target="card" data-id="<%= card[:id] %>">
@@ -10,10 +16,5 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-  <div class='centered-children space'>
-    <button class="button game-button" data-action="click->solo#start">Start</button>
-    <%= link_to "Restart", game_path, class: "button game-button" %>
-
   </div>
 </div>
