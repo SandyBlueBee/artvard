@@ -9,24 +9,31 @@
       <p>Ici, on te fait découvrir les peintures qui ont marqué l'Histoire de l'art. À travers notre galerie virtuelle, on te permet d'apprendre et de reconnaître toutes ces œuvres que la Pop-culture a copieusement détournées, et ça, on en met notre oreille à couper!</p>
     </div>
     <div class="grid_home">
-      <article class="card">
-        <%= image_tag "homepage/morse-louvre-thumbnail.jpg", class:"image" %>
-        <div class="centered-children">
-          <%= link_to "Visiter la Galerie", artworks_path, class: "button navigation-button" %>
-        </div>
-      </article>
-      <article class="card">
-        <%= image_tag "homepage/Paul_Cezanne_Les_joueurs_de_cartes.jpg", class:"image" %>
-        <div class="centered-children">
-          <%= link_to "Voir la Game Room", choice_gamerooms_path, class: "button navigation-button" %>
-        </div>
-      </article>
-      <article class="card">
-        <%= image_tag "homepage/rockwell.jpg", class:"image" %>
-        <div class="centered-children">
-          <%= link_to "Paint", paint_path, class: "button navigation-button" %>
-        </div>
-      </article>
+      <%# galerie %>
+      <%= link_to(artworks_path) do %>
+        <article class="card">
+          <div class="galerie-homelink rounded">
+            <%# <%= image_tag "homepage/morse-louvre-thumbnail.jpg", class:"image" %>
+          </div>
+        </article>
+      <% end %>
+      <%# jeu %>
+      <%= link_to(choice_gamerooms_path) do %>
+        <article class="card">
+          <div class="jeu-homelink rounded">
+            <%# <%= image_tag "homepage/Paul_Cezanne_Les_joueurs_de_cartes.jpg", class:"image" %>
+          </div>
+        </article>
+      <% end %>
+
+      <%# paint %>
+      <%= link_to(paint_path) do %>
+        <article class="card">
+          <div class="paint-homelink rounded">
+            <%# <%= image_tag "homepage/rockwell.jpg", class:"image" %>
+          </div>
+        </article>
+      <% end %>
     </div>
   </div>
 </main>
