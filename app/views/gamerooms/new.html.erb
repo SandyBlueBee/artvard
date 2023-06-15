@@ -1,9 +1,12 @@
 <main>
   <div class="container">
-  <% "Nouvelle gameroom" %>
-  <%= simple_form_for @gameroom do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit %>
-  <% end %>
+    <% "Nouvelle gameroom" %>
+    <%= simple_form_for @gameroom do |f| %>
+      <%= f.input :name,
+                  label: "Nom de la room"%>
+      <div class="form-actions btn btn-light border rounded">
+        <%= f.button :submit, "Créer" %>
+      </div>
+    <% end %>
   </div>
 </main>

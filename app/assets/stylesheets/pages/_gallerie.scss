@@ -40,7 +40,7 @@
   overflow-x: hidden;
   justify-content: center;
   min-height: 100vh;
-
+  padding: 0px;
 }
 
 .columns {
@@ -51,14 +51,6 @@
 }
 
 // .artworks-full-gallery {
-
-  //   display: grid;
-  // 	justify-content: center;
-  // 	grid-template-columns: repeat(5, var(--card-width));
-  // 	gap: 1rem;
-  //   /* overflow: hidden shouldn't break this? */
-  //   overflow: hidden;
-  // }
 
 .artwork-card {
 
@@ -75,7 +67,7 @@
   background: #000;
   background-clip: padding-box; /* ! */
   border: solid $border transparent; /* ! */
-  border-radius: 1em;
+  // border-radius: 0.5em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
   &:before {
@@ -95,5 +87,32 @@
 img {
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  // border-radius: 10px;
 }
+
+.box14{position:relative}
+.box14 a:link{text-decoration: none;}
+.box15,.box17,.box18{box-shadow:0 0 5px #7e7d7d;text-align:center}
+.box14:before{content:"";width:100%;height:100%;background:rgba(0,0,0,.5);position:absolute;top:0;left:0;opacity:0;transition:all .35s ease 0s}
+.box14:hover:before{opacity:1}
+.box14 img{width:100%;height:auto}
+.box14 .box-content{overflow: hidden ;width:90%;height:90%;position:absolute;top:5%;left:5%}
+.box14 .box-content:after,.box14 .box-content:before{content:"";position:absolute;top:0;left:0;bottom:0;right:0;opacity:0;transition:all .7s ease 0s}
+.box14 .box-content:before{border-bottom:1px solid rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.5);transform:scale(0,1);transform-origin:0 0 0}
+.box14 .box-content:after{border-left:1px solid rgba(255,255,255,.5);border-right:1px solid rgba(255,255,255,.5);transform:scale(1,0);transform-origin:100% 0 0}
+.box14:hover .box-content:after,.box14:hover .box-content:before{opacity:1;transform:scale(1);transition-delay:.15s}
+.box14 .title{font-size:21px;font-weight:700;color:#fff;margin:15px 0;padding: 1px 3% ;opacity:0;transform:translate3d(0,-50px,0);transition:transform .5s ease 0s}
+.box14:hover .title{opacity:1;transform:translate3d(0,0,0)}
+.box14 .artist{font-size:14px;color:#fff;padding:10px;opacity:0;transform:translate3d(0,-50px,0);transition:all .7s ease 0s}
+.box14 .icon,.box15 .icon{padding:0;list-style:none}
+.box14:hover .artist{opacity:1;transform:translate3d(0,0,0);transition-delay:.15s}
+.box14 .icon{width:100%;margin:0;position:absolute;bottom:-10px;left:0;opacity:0;z-index:1;transition:all .7s ease 0s}
+.box14:hover .icon{bottom:20px;opacity:1;transition-delay:.15s}
+.box14 .icon li a{display:block;width:40px;height:40px;line-height:40px;border:1px solid #fff;border-radius:0 16px;font-size:14px;color:#fff;margin-right:5px;transition:all .4s ease 0s}
+.box14 .icon li a:hover{background:#d79719;border-color:#d79719}
+@media only screen and (max-width:990px){.box14{margin-bottom:30px}
+}
+
+// *{
+//   border: solid 1px red;
+// }

@@ -1,24 +1,26 @@
 <div class="choicePage">
-<div class="filler"></div>
-<div class="filler"></div>
-<%# <div class="btn btn-warning"><%= link_to "Retour", root_path </div> %>
-<div class="d-flex justify-content-center">
-  <h3 class=" w-50 d-flex justify-content-center fst-italic">"T'es quand même pas Devin? Ci ?"</h3>
+<div class="filler mb-5"></div>
+<div class="d-grid">
+  <div class="d-flex justify-content-center">
+    <h1 class= " d-flex justify-content-center col-4 border-2 border-bottom pb-3 mb-3 fw-bold ">Art Match-Up</h1>
+  </div>
+  <div class="d-flex justify-content-center">
+    <h3 class=" w-50 d-flex justify-content-center fst-italic mb-5">"T'es un quand même pas Devin? Si ?"</h3>
+  </div>
 </div>
-<div class="filler"></div>
 
 <div class="choiceContainer d-flex align-items-center justify-content-center position-relative flex-wrap">
   <%# 1 Joueur %>
   <%= link_to(game_path)do %>
     <div class="choiceCard d-flex position-relative flex-column">
           <div class='imgContainer'>
-              <%= image_tag ("choice/choice_logo1.png") %>
+              <%= image_tag ("choice/rick.jpg") %>
           </div>
           <div class="choiceContent">
-              <%# <h2>1 Joueur</h2> %>
+              <h2 class="d-flex justify-content-center">1 Joueur</h2>
               <p>Fais travailler ta mémoire </p>
               <p>12 paires de cartes à trouver, </p>
-              <p>Relie les auteurs à leur tableau, tu seras incollable!</p>
+              <p>Relie les auteurs à leur tableau, tu seras vite incollable!</p>
           </div>
       </div>
   <% end %>
@@ -26,13 +28,13 @@
   <%= link_to(gamerooms_path) do %>
     <div class="choiceCard d-flex position-relative flex-column">
           <div class='imgContainer'>
-            <%= image_tag ("choice/choice_logo2.png") %>
+            <%= image_tag ("choice/eyes.jpg") %>
           </div>
           <div class="choiceContent">
-              <%# <h2>2 Joueurs</h2> %>
+              <h2 class="d-flex justify-content-center">Multijoueur</h2>
               <p>Meme principes tu t'en doutes bien</p>
-              <p>Mais cette fois-ci montres à ton pote que t'es plus rapide que lui.</p>
-              <p>Le premier à finir l'emporte!</p>
+              <p>Mais cette fois-ci montres à tes potes que t'es plus rapide qu'eux.</p>
+              <p>Le premier qui finit l'emporte!</p>
           </div>
       </div>
   <% end %>
