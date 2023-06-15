@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   # validates :email, presence: true
-  has_many :players, dependent: :destroy
+  has_many :players, dependent: :destroys
 end
