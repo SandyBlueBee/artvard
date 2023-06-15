@@ -13,4 +13,5 @@ User.create!(username: "toto", email: "toto@test.com", password: "password")
 puts "je fais le service"
 Artwork.destroy_all
 ScrapArtService.new.call
+Artwork.create!(title: "Fusion Artistique", artist: "Sacha du bourg palette", description: "", image: "easteregg/vague-levia.png", exposition: "")
 puts "j'ai fini le service ( #{Artwork.count} peintures créées )"
