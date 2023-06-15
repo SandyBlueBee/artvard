@@ -7,8 +7,8 @@ export default class extends Controller {
 
   connect() {
     console.log("paint.js has arrived");
-    this.canvasTarget.height = 400;
-    this.canvasTarget.width = 700;
+    this.canvasTarget.height = 480;
+    this.canvasTarget.width = window.innerWidth * 0.4;
     this.brushSize = 3;
     this.prevX = null
     this.prevY = null
@@ -99,28 +99,13 @@ export default class extends Controller {
     });
   }
 
-  // function changeSaturationUsingRegex(color, newSaturation) {
-  //   const saturationRegex = /(\d+)%/;
-  //   const modifiedColor = color.replace(saturationRegex, `${newSaturation}%`);
-
-  //   return modifiedColor;
-  // }
-
-  // const color = 'hsl(20,75%,60%)';
-  // const newSaturation = 80;
-  // const modifiedColor = changeSaturationUsingRegex(color, newSaturation);
-  // console.log(modifiedColor); // Output: hsl(20,80%,60%)
-
   changeBrightness(event) {
     let brightness = event.currentTarget.value
-    const brightnessRegex = /.*?,\s*(\d+)%\)/;
+    const brightnessRegex = /(?<=,[^,]*,)\d+/;
     console.log(brightness)
     this.colorTargets.forEach(color => {
-      console.log(color.dataset.color)
       var paletteColor = color.dataset.color
-      console.log(color.match(brightnessRegex))
       paletteColor = paletteColor.replace(brightnessRegex, brightness);
-      console.log(paletteColor)
       color.dataset.color = paletteColor
       color.style.backgroundColor = paletteColor
     });

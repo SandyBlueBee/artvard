@@ -2,12 +2,36 @@
   border: 1px solid lightgrey;
 }
 
-.paint-color-palette {
+.paint-palette-settings {
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  width: 172px;
   display: flex;
-  padding: 2px;
-  gap: 4px;
-  margin: 5px 20px;
+  flex-direction: column;
+  align-items: center;
+}
 
+.paint-palette-settings h6 {
+  margin: 0px;
+
+}
+
+.paint-palette-settings p {
+  margin: 0px;
+  line-height: 1em;
+}
+
+.paint-palette-settings .flex-column {
+  gap: 0px;
+}
+
+.paint-color-palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: fit-content;
+  gap: 4px;
   // border: 1px solid goldenrod;
 }
 
@@ -22,12 +46,34 @@
 
 .paint-flex {
   display: flex;
+  width: 90%;
+  height: 90%;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.paint-double-flex {
+  display: flex;
   width: 100%;
   justify-content: space-between;
-
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .paint-board {
   position: absolute;
   right: 50px;
+  height: 480px;
+  max-width: 20vw;
+}
+
+.paint-card {
+  padding: 40px;
+  background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.4));
+  border-radius: 20px;
+  max-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

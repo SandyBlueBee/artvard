@@ -13,8 +13,8 @@
         <strong><p><%= @artwork.exposition %></p></strong>
         <p class="artwork-description"><%= @artwork.description %></p>
         <div style="display:flex; justify-content: space-between;">
+          <%= link_to 'Retour', 'javascript:history.back()', class: "button navigation-button" %>
           <%= link_to "Dessine moi :)", paint_path(id: @artwork.id), class:"button game-button"%>
-          <%= link_to 'Retour', 'javascript:history.back()', class: "button game-button" %>
         </div>
       </div>
     </div>

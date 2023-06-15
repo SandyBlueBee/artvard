@@ -1,74 +1,38 @@
 <main>
-  <div class="our-container paint-flex" data-controller="paint">
-    <div>
-      <h1>NO PAINT NO GAME</h1>
-      <div class="space"></div>
-      <div data-paint-target="image">
+  <div data-controller="paint">
+    <h1>NO PAINT NO GAME</h1>
+    <div class="paint-double-flex">
+      <div class="paint-card">
         <%= render "artworks/artwork", artwork: @artwork %>
+        <select name="change-artpiece" id="change-artpiece" data-action="change->paint#changeArtpiece">
+          <% @artworks.each do |artwork| %>
+            <option value=<%= artwork.id %>><%=artwork.title%></option>
+          <% end %>
+        </select>
       </div>
-      <select name="change-artpiece" id="change-artpiece" data-action="change->paint#changeArtpiece">
-        <% @artworks.each do |artwork| %>
-          <option value=<%= artwork.id %>><%=artwork.title%></option>
-        <% end %>
-      </select>
-    </div>
-    <div>
-      <div >
-        <canvas id="canvas" data-action="mousedown->paint#drawToggle mousemove->paint#drawing mouseup->paint#resetPreviousLocation paint#drawToggle" data-paint-target="canvas"></canvas>
+      <canvas id="canvas" data-action="mousedown->paint#drawToggle mousemove->paint#drawing mouseup->paint#resetPreviousLocation paint#drawToggle" data-paint-target="canvas"></canvas>
+      <div class="paint-palette-settings">
+        <h6>Palette :</h6>
+        <p>luminosité : </p>
+        <input type="range" value="90" min="30" max="100" data-action="change->paint#changeBrightness">
+        <p>saturation : </p>
+        <input type="range" value="90" min="0" max="100" data-action="change->paint#changeSaturation">
         <div class="paint-color-palette">
-          <%# colors = ["hsb(0)","#F6AF7D", "#FBC366", "#FCDA66", "#FDF567", "#CFEC67", "#A9D8C4", "#95D1F3", "#869ACE", "#9187C1", "#AD8BC1", "#DF93BF", "#ffffff", "#C2C2C2", "#474747", "#000000"] %>
-          <% hue = 0 %>
-          <% 17.times do %>
-            <% hue = hue + 20 %>
+          <% hues = [0, 20, 40, 60, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300, 320, 340 ] %>
+          <% hues.each do |hue| %>
             <% color = "hsl(#{hue},75%,60%)"%>
             <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: <%=color%>" data-color=<%=color%>></div>
           <% end %>
             <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: white" data-color='white'></div>
             <div class="paint-nav-color" data-paint-target= "color" data-action="click->paint#changeColor" style="--tooltip-color: black" data-color='black'></div>
+        </div>
+        <div class="flex-column">
+          <h6>Pinceau :</h6>
           <p>taille : </p>
-          <select name="paint-brush-size" id="paint-brush-size" data-action= "change->paint#changeBrushSize">
-            <option value=<%= 0.5 %> ><%= 0.5 %></option>
-            <option value=<%= 0.75 %> ><%= 0.75 %></option>
-            <% num = 0 %>
-            <% 50.times do %>
-              <% num = num+1 %>
-              <% if num == 4 %>
-                <option value=<%= num %> selected="selected"><%= num %></option>
-              <% else %>
-                <option value=<%= num %> ><%= num %></option>
-              <% end %>
-            <% end %>
-          </select>
-          <p>luminosité : </p>
-          <select name="paint-brush-brightness" id="paint-brush-brightness" data-action= "change->paint#changeBrightness">
-            <% num = 0 %>
-            <% 100.times do %>
-              <% num = num+1 %>
-              <% if num == 65 %>
-                <option value=<%= num %> selected="selected"><%= num %></option>
-              <% else %>
-                <option value=<%= num %> ><%= num %></option>
-              <% end %>
-            <% end %>
-          </select>
-          <p>saturation : </p>
-          <select name="paint-brush-saturation" id="paint-brush-saturation" data-action= "change->paint#changeSaturation">
-            <% num = 0 %>
-            <% 100.times do %>
-              <% num = num+1 %>
-              <% if num == 90 %>
-                <option value=<%= num %> selected="selected"><%= num %></option>
-              <% else %>
-                <option value=<%= num %> ><%= num %></option>
-              <% end %>
-            <% end %>
-          </select>
-          <p>Réglages :</p>
+          <input type="range" value="4" min="0" max="100" data-action="change->paint#changeBrushSize">
         </div>
-        <div class="paint-color-palette">
-          <button class="clear button game-button" data-action="click->paint#clearCanvas">effacer</button>
-          <button class="save button game-button" data-action="click->paint#savePng">sauvegarder</button>
-        </div>
+        <button style="margin-top: 10px;" class="clear button game-button" data-action="click->paint#clearCanvas">effacer</button>
+        <button style="margin-top: 10px;" class="save button game-button" data-action="click->paint#savePng">sauvegarder</button>
       </div>
     </div>
   </div>
