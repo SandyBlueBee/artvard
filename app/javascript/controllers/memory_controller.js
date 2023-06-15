@@ -129,6 +129,10 @@ export default class extends Controller {
       }
       this.timer -= 1
       if (this.timer === 0) {
+        console.log(this.timerTarget)
+        this.timerTarget.style.display = "none"
+        setTimeout(function(){
+  }, 1000);
         clearInterval(interval)
       }
       this.timerTarget.innerText = this.timer

@@ -10,9 +10,10 @@
 
       <button class="button game-button" data-action="click->memory#start">Start</button>
     <% end %>
+      <div class="text-center" data-memory-target="timer">5</div>
     </div>
   </div>
-  <p data-memory-target="timer"></p>
+
   <div class='flip-card-grid'>
     <% cards.each do |card| %>
       <div class="card disabled upsidedown" data-action="click->memory#flip" data-memory-target="card" data-id="<%= card[:id] %>">
