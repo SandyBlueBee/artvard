@@ -1,17 +1,31 @@
 <div class="columns">
   <% if artworks.any? %>
+    <% artworks = artworks.shuffle %>
     <% artworks.each do |artwork| %>
-      <%= link_to(artwork_path(artwork.id)) do %>
-        <div class="artwork-card mb-3 mt-1 rounded">
-          <div class="box14">
-            <%= image_tag image_url(artwork.image)%>
+      <% if artwork == @easteregg %>
+        <%= link_to(error_404_path) do %>
+          <div class="artwork-card mb-3 mt-1 rounded">
+            <div class="box14">
+              <%= image_tag image_url(artwork.image)%>
               <div class="box-content">
                 <h3 class="title"> <%= artwork.title %></h3>
                 <span class="artist"> <%= artwork.artist %></span>
-
               </div>
             </div>
-        </div>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to(artwork_path(artwork.id)) do %>
+          <div class="artwork-card mb-3 mt-1 rounded">
+            <div class="box14">
+              <%= image_tag image_url(artwork.image)%>
+              <div class="box-content">
+                <h3 class="title"> <%= artwork.title %></h3>
+                <span class="artist"> <%= artwork.artist %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   <% else %>
