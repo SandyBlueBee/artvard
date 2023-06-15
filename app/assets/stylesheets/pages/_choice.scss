@@ -1,12 +1,15 @@
 
 .choiceContainer {
-  gap: 5%;
+  gap: 10%;
+}
+.choiceContainer a:link {
+  text-decoration: none;
 }
 
 .choiceContainer .choiceCard
 {
     max-width: 300px;
-    height: 215px;
+    height: 95px;
     margin: 30px 10px;
     padding: 20px 15px;
     border: 10px;
@@ -16,15 +19,15 @@
     transition: 0.3s ease-in-out;
   }
 .choiceContainer .choiceCard:hover
-{   
-    // height: 60vh;
-    height: 350px;
+{
+    height: 40vh;
+    // height: 350px;
 }
 .choiceContainer .choiceCard .imgContainer
 {
     position: relative;
     width:250px;
-    height:170px;
+    height:96px;
     top:-50px;
     left:10px;
     border-radius: 8px;
@@ -38,7 +41,7 @@
 
 }
 .choiceContainer .choiceCard .choiceContent
-{   
+{
     position: relative;
     margin-top: -140px;
     padding: 10px 15px;
@@ -50,7 +53,7 @@
     transition: 0.3s ease-in-out;
 }
 .choiceContainer .choiceCard:hover .choiceContent
-{   
+{
     visibility: visible;
     opacity: 1;
     margin-top: -40px;
@@ -62,3 +65,7 @@
         left: -2px;
     }
 }
+
+// *{
+//   border: solid 1px red;
+// }

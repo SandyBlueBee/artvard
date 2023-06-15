@@ -40,7 +40,7 @@
   overflow-x: hidden;
   justify-content: center;
   min-height: 100vh;
-
+  padding: 0px;
 }
 
 .columns {
@@ -51,14 +51,6 @@
 }
 
 // .artworks-full-gallery {
-
-  //   display: grid;
-  // 	justify-content: center;
-  // 	grid-template-columns: repeat(5, var(--card-width));
-  // 	gap: 1rem;
-  //   /* overflow: hidden shouldn't break this? */
-  //   overflow: hidden;
-  // }
 
 .artwork-card {
 
@@ -75,7 +67,7 @@
   background: #000;
   background-clip: padding-box; /* ! */
   border: solid $border transparent; /* ! */
-  border-radius: 1em;
+  // border-radius: 0.5em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
   &:before {

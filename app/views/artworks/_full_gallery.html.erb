@@ -1,13 +1,13 @@
-<div class="columns pb-4 pt-4">
+<div class="columns">
   <% if artworks.any? %>
     <% artworks.each do |artwork| %>
       <%= link_to(artwork_path(artwork.id)) do %>
-        <div class="artwork-card mb-3 mt-1  rounded">
+        <div class="artwork-card mb-3 mt-1 rounded">
           <div class="box14">
             <%= image_tag image_url(artwork.image)%>
               <div class="box-content">
                 <h3 class="title"> <%= artwork.title %></h3>
-                <span class="artist rounded"> <%= artwork.artist %></span>
+                <span class="artist"> <%= artwork.artist %></span>
 
               </div>
             </div>
