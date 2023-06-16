@@ -146,32 +146,33 @@ export default class extends Controller {
   finishGame(data) {
     if (data.id === this.currentUserIdValue) {
       return
-    }
-    this.cardTargets.forEach(card => {
-      card.classList.add("remove")
-    })
-    document.body.innerHTML += `
-      <div style="
-        position: absolute; top: 0; width: 100vw; height: 100vh; display: flex;
-        align-items: center;
-        justify-content: center;">
+    } else {
+      this.cardTargets.forEach(card => {
+        card.classList.add("remove")
+      })
+      document.body.innerHTML += `
         <div style="
-          background: rgba(255, 255, 255, 0.35);
-          border-radius: 8px;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(9.2px);
-          -webkit-backdrop-filter: blur(9.2px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          height: 20vh;
-          width: 40vw;
-          display: flex;
-          flex-direction: column;
+          position: absolute; top: 0; width: 100vw; height: 100vh; display: flex;
           align-items: center;
           justify-content: center;">
-          <p> Dommage tu as perdu ! </p>
-          <a class="button game-button" href="/gamerooms/${this.gameroomIdValue}">Restart</a>
+          <div style="
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 8px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.2px);
+            -webkit-backdrop-filter: blur(9.2px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            height: 20vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;">
+            <p> Dommage tu as perdu ! </p>
+            <a class="button game-button" href="/gamerooms/${this.gameroomIdValue}">Restart</a>
+          </div>
         </div>
-      </div>
-    `
+      `
+    }
   }
 }
