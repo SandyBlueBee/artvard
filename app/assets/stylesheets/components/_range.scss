@@ -1,0 +1,89 @@
+input[type=range] {
+  height: 20px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 2px #A6A6A6;
+  background: #E7C15F;
+  border-radius: 4px;
+  border: 2px solid goldenrod;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 2px #A6A6A6;
+  border: 2px solid goldenrod;
+  height: 15px;
+  width: 15px;
+  border-radius: 0px;
+  background: #E7C15F;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #E7C15F;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 2px #A6A6A6;
+  background: #E7C15F;
+  border-radius: 4px;
+  border: 2px solid goldenrod;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 2px #A6A6A6;
+  border: 2px solid goldenrod;
+  height: 30px;
+  width: 30px;
+  border-radius: 0px;
+  background: #E7C15F;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #E7C15F;
+  border: 2px solid goldenrod;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px #A6A6A6;
+}
+input[type=range]::-ms-fill-upper {
+  background: #E7C15F;
+  border: 2px solid goldenrod;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px #A6A6A6;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 2px #A6A6A6;
+  border: 2px solid goldenrod;
+  height: 30px;
+  width: 30px;
+  border-radius: 0px;
+  background: #E7C15F;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #E7C15F;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #E7C15F;
+}

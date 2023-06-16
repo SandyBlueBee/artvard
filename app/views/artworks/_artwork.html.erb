@@ -1,2 +1,4 @@
-    <%= image_tag image_url(artwork.image) %>
-    <%= artwork.title%>
+<div data-paint-target="image" class="artwork-image" style="display=block">
+  <%= image_tag image_url(@artwork.image), class:"box-shadow" %>
+  <%= artwork.title%>
+</div>
