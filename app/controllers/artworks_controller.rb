@@ -3,10 +3,9 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = Artwork.all
+    @easteregg = Artwork.find_by title: "Fusion Artistique"
     @sample = @artworks.sample(15)
-    # if params[:query].present?
-    #   @artworks = @artworks.where("artist ILIKE ?", "%#{params[:query]}")
-    # end
+    @artworks_shuffle = @artworks.shuffle
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR artist ILIKE :query"
       @artworks = @artworks.where(sql_subquery, query: "%#{params[:query]}%")

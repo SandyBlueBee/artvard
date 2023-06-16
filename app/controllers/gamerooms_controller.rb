@@ -25,7 +25,7 @@ class GameroomsController < ApplicationController
 
   def create
     @gameroom = Gameroom.new(gameroom_params)
-    Player.create(gameroom: @gameroom, user: current_user)
+    Player.create(gameroom: @gameroom, user: current_user, creator: true)
     if @gameroom.save
       redirect_to gameroom_path(@gameroom)
     else
