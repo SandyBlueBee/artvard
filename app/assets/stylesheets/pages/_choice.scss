@@ -14,21 +14,20 @@
     padding: 20px 15px;
     border: 10px;
     border-radius: 8px;
-
+    height: fit-content;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     transition: 0.3s ease-in-out;
   }
-.choiceContainer .choiceCard:hover
-{
-    height: 40vh;
-    // height: 350px;
-}
+// .choiceContainer .choiceCard:hover
+// {
+     // height: 350px;
+// }
 .choiceContainer .choiceCard .imgContainer
 {
     position: relative;
     width:250px;
     height:96px;
-    top:-50px;
+    top:-40px;
     left:10px;
     border-radius: 8px;
     z-index: 1;
@@ -40,15 +39,20 @@
     border-radius: 8px;
 
 }
+
+.choiceContainer .choiceCard p
+{
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+
 .choiceContainer .choiceCard .choiceContent
 {
     position: relative;
-    margin-top: -140px;
     padding: 10px 15px;
+    margin-top: -10px;
     text-align: left ;
     color:#111;
-    visibility: hidden;
-    opacity: 0;
     pointer-events: none;
     transition: 0.3s ease-in-out;
 }
@@ -56,7 +60,7 @@
 {
     visibility: visible;
     opacity: 1;
-    margin-top: -40px;
+    margin-top: -20px;
     transition-delay: 0.3s;
 }
 
