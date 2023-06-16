@@ -5,6 +5,7 @@
       <div class="paint-card">
         <%= render "artworks/artwork", artwork: @artwork %>
         <select name="change-artpiece" id="change-artpiece" data-action="change->paint#changeArtpiece">
+          <option value=""></option>
           <% @artworks.each do |artwork| %>
             <option value=<%= artwork.id %>><%=artwork.title%></option>
           <% end %>
