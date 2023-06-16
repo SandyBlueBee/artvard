@@ -163,8 +163,9 @@ export default class extends Controller {
           -webkit-backdrop-filter: blur(9.2px);
           border: 1px solid rgba(255, 255, 255, 0.3);
           height: 20vh;
-          width: 80vw;
+          width: 40vw;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;">
           <p> Dommage tu as perdu ! </p>
